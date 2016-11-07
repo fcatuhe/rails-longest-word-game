@@ -1,0 +1,12 @@
+<h2>Now your result :</h2>
+<p>The grid: <%= @grid.join %></p>
+<p>Your word: <%= @attempt %></p>
+<p>Time Taken to answer: <%= @result[:time] %></p>
+<p>Translation: <%= @result[:translation] %></p>
+<p>Your score: <%= @result[:score] %></p>
+<p>Message: <%= @result[:message] %></p>
+
+<%= link_to "New try", game_path %>
+
+<p>Number of games: <%= @nb_games %></p>
+<p>Average score: <%= @avg_score %></p>

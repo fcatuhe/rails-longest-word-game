@@ -1,0 +1,19 @@
+<h2>Here is your grid :</h2>
+<table>
+  <tr>
+    <% @grid.each do |letter| %>
+      <td><%= letter %></td>
+    <% end %>
+  </tr>
+</table>
+
+<p>Start time: <%= @start_time %></p>
+
+<form action="/score">
+  <label for="attempt">What's your best shot?</label>
+  <input type="text" id="attempt" name="attempt">
+  <input type="hidden" name="grid" value="<%= @grid.join %>">
+  <input type="hidden" name="start_time" value="<%= @start_time %>">
+  <input type="submit" value="Shoot!">
+</form>
+
