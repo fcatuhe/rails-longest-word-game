@@ -10,8 +10,8 @@ class LongestWordController < ApplicationController
     @start_time = Time.parse params[:start_time]
     @end_time = Time.now
     @result = run_game(@attempt, @grid, @start_time, @end_time)
-    session[:nb_games] ||= 0
     session[:avg_score] ||= 0
+    session[:nb_games] ||= 0
     session[:avg_score] = ((session[:avg_score] * session[:nb_games]) + @result[:score]) / (session[:nb_games] + 1)
     session[:nb_games] += 1
     @nb_games = session[:nb_games]
